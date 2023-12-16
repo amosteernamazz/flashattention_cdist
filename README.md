@@ -1,4 +1,5 @@
-# FlashAttention
+# FlashAttention with Cdist
+
 This repository provides the official implementation of FlashAttention and
 FlashAttention-2 from the
 following papers.
@@ -7,15 +8,13 @@ following papers.
 Tri Dao, Daniel Y. Fu, Stefano Ermon, Atri Rudra, Christopher Ré  
 Paper: https://arxiv.org/abs/2205.14135  
 IEEE Spectrum [article](https://spectrum.ieee.org/mlperf-rankings-2022) about our submission to the MLPerf 2.0 benchmark using FlashAttention.
-![FlashAttention](assets/flashattn_banner.jpg)
 
-**FlashAttention-2: Faster Attention with Better Parallelism and Work Partitioning**  
-Tri Dao
 
-Paper: https://tridao.me/publications/flash2/flash2.pdf
+**FlashAttention-2 with Cdist Loss**
 
-![FlashAttention-2](assets/flashattention_logo.png)
+This repository provides the official implementation of FlashAttention and FlashAttention-2 with the loss is cdist between Q and K, which is mentioned in Shanghai AI lab.
 
+This repository provides flashattention pytest for test the forward and backword. with all passed.
 
 ## Usage
 
