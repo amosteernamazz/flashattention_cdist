@@ -182,19 +182,6 @@ We also include a training
 [script](https://github.com/Dao-AILab/flash-attention/tree/main/training) to
 train GPT2 on Openwebtext and GPT3 on The Pile.
 
-## Triton implementation of FlashAttention
-
-Phil Tillet (OpenAI) has an experimental implementation of FlashAttention in Triton:
-https://github.com/openai/triton/blob/master/python/tutorials/06-fused-attention.py
-
-As Triton is a higher-level language than CUDA, it might be easier to understand
-and experiment with. The notations in the Triton implementation are also closer
-to what's used in our paper.
-
-We also have an experimental implementation in Triton that support attention
-bias (e.g. ALiBi):
-https://github.com/Dao-AILab/flash-attention/blob/main/flash_attn/flash_attn_triton.py
-
 
 ## Tests
 We test that FlashAttention produces the same output and gradient as a reference
@@ -207,6 +194,9 @@ To run the tests:
 ```
 pytest -q -s tests/test_flash_attn.py
 ```
+
+flash attention with cdist loss can test also.
+
 ## When you encounter issues
 
 This new release of FlashAttention-2 has been tested on several GPT-style
@@ -214,18 +204,3 @@ models, mostly on A100 GPUs.
 
 If you encounter bugs, please open a GitHub Issue!
 
-## Citation
-If you use this codebase, or otherwise found our work valuable, please cite:
-```
-@inproceedings{dao2022flashattention,
-  title={Flash{A}ttention: Fast and Memory-Efficient Exact Attention with {IO}-Awareness},
-  author={Dao, Tri and Fu, Daniel Y. and Ermon, Stefano and Rudra, Atri and R{\'e}, Christopher},
-  booktitle={Advances in Neural Information Processing Systems},
-  year={2022}
-}
-@article{dao2023flashattention2,
-  title={Flash{A}ttention-2: Faster Attention with Better Parallelism and Work Partitioning,
-  author={Dao, Tri},
-  year={2023}
-}
-```
